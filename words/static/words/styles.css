@@ -1,22 +1,61 @@
-/* styles.css */
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ensure full viewport height */
+    height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    margin: 0; /* Remove default body margin */
+}
+
+h1 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+li a {
+    color: #f00; /* Adjust link color */
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Adjust button background color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+a:hover {
+    background-color: #0056b3; /* Adjust button hover background color */
 }
 
 .container {
-    width: 50%; /* Adjust as needed */
+    width: 35%; /* 2/3 of the screen width */
     background-color: #fff; /* Optional: White background for the container */
     padding: 20px; /* Optional: Add padding inside the container */
     border: 1px solid #ccc; /* Optional: Add border for visibility */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+    margin: 0 auto; /* Center the container */
 }
 
 /* Optional: Style links as buttons */
@@ -32,4 +71,35 @@ body {
 
 .container a:hover {
     background-color: #e0e0e0;
+}
+
+/* styles.css */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
 }

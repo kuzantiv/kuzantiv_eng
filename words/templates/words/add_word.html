@@ -4,9 +4,10 @@
 <html>
 <head>
     <title>Add Word</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'words/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'words/styles_for_practice_words.css' %}">
 </head>
 <body>
+<div class="container">
     <h1>Add New Word</h1>
     <form method="post">
         {% csrf_token %}
@@ -14,5 +15,6 @@
         <button type="submit">Save</button>
     </form>
     <a href="{% url 'home' %}">Home</a>
+</div>
 </body>
 </html>
