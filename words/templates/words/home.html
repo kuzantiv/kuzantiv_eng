@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Word Practice</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'words/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Word Practice</h1>
+        <a href="{% url 'practice_words' %}">Practice Words</a>
+        <a href="{% url 'add_word' %}">Add New Words</a>
+        <a href="{% url 'manage_words' %}">Manage Words</a>
+        <a href="{% url 'account_logout' %}">Logout</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Practice Words</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'words/styles.css' %}">
+</head>
+<body>
+    <h1>Practice Words</h1>
+    <p>What is the translation of "{{ word.word }}"?</p>
+    <form method="post" action="{% url 'practice_words' %}">
+        {% csrf_token %}
+        {% for translation in translations %}
+            <button type="submit" name="translation" value="{{ translation }}">{{ translation }}</button><br>
+        {% endfor %}
+    </form>
+    <a href="{% url 'home' %}">Home</a>
+</body>
+</html>

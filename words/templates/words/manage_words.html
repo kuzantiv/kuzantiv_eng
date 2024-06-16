@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Manage Words</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'words/styles.css' %}">
+    <style>
+        /* Optional: Add inline styles for specific page styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        li a {
+            color: #f00; /* Adjust link color */
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff; /* Adjust button background color */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            background-color: #0056b3; /* Adjust button hover background color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Manage Words</h1>
+    <ul>
+        {% for word in words %}
+            <li>{{ word.english_word }} ({{ word.transcription }}) - {{ word.translation }} <a href="{% url 'delete_word' word.id %}">Delete</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Home</a>
+</body>
+</html>

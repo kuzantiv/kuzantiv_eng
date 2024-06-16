@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Add Word</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'words/styles.css' %}">
+</head>
+<body>
+    <h1>Add New Word</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'home' %}">Home</a>
+</body>
+</html>

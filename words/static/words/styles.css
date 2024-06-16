@@ -1,0 +1,35 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure full viewport height */
+}
+
+.container {
+    width: 50%; /* Adjust as needed */
+    background-color: #fff; /* Optional: White background for the container */
+    padding: 20px; /* Optional: Add padding inside the container */
+    border: 1px solid #ccc; /* Optional: Add border for visibility */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}
+
+/* Optional: Style links as buttons */
+.container a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin: 5px;
+}
+
+.container a:hover {
+    background-color: #e0e0e0;
+}
