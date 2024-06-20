@@ -145,6 +145,13 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'words', 'static'),
 ]
 
+# Ensure this setting is only used in production
+if 'production' in os.environ.get('DJANGO_SETTINGS_MODULE', ''):
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+    ]
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
