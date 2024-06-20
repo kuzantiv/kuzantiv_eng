@@ -43,6 +43,32 @@ button {
     transition: background-color 0.3s;
 }
 
+.correct {
+    background-color: #007bff;
+    color: white;
+    border: 3px solid #73EA55;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px 0;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.wrong {
+    background-color: #007bff;
+    color: white;
+    border: 3px solid #f52d0f;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px 0;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
 button:hover {
     background-color: #0056b3;
 }

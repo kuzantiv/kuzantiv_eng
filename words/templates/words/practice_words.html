@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Practice Words</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'words/styles_for_practice_words.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'words/styles_for_practice_words.css' %}?{% now 'U' %}">
 </head>
 <body>
 <div class="container">
@@ -13,9 +13,16 @@
     <form method="post" action="{% url 'practice_words' %}">
         {% csrf_token %}
         {% for translation in translations %}
-        <button type="submit" name="translation" value="{{ translation }}">{{ translation }}</button>
+        {% if status is not None and status is True and translation == chosen_word %}
+        <button class="correct" type="submit" name="translation" value="{{word}} {{ translation }}">{{ translation }}</button>
+        {% elif status is not None and status is False and translation == chosen_word %}
+        <button class="wrong" type="submit" name="translation" value="{{word}} {{ translation }}">{{ translation }}</button>
+        {% else %}
+        <button type="submit" name="translation" value="{{word}} {{ translation }}">{{ translation }}</button>
+        {% endif %}
         {% endfor %}
     </form>
+    <a href="{% url 'practice_words' %}">Next word</a>
     <a href="{% url 'home' %}">Home</a>
 </div>
 </body>
