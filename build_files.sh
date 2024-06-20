@@ -23,5 +23,5 @@ fi
 pip install -r requirements.txt
 
 # Run Django management commands
-python3.12 manage.py collectstatic --noinput
-python3.12 manage.py migrate
+python3.12 manage.py collectstatic --noinput --settings=kuzantiv_eng.settings.production
+python3.12 manage.py migrate --settings=kuzantiv_eng.settings.production
