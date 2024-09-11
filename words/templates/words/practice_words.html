@@ -18,7 +18,7 @@
         {% elif status is not None and status is False and translation == chosen_word %}
         <button class="wrong" type="submit" name="translation" value="{{word}} {{ translation }}">{{ translation }}</button>
         {% else %}
-        <button type="submit" name="translation" value="{{word}} {{ translation }}">{{ translation }}</button>
+        <button type="submit" name="translation" value="{{word}},{{ translation }}">{{ translation }}</button>
         {% endif %}
         {% endfor %}
     </form>

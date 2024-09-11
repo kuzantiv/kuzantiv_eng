@@ -1,5 +1,7 @@
 import json
 import random
+import subprocess
+from pprint import pprint
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
@@ -14,8 +16,21 @@ context = {
     'status': None
 }
 
+
 def home(request):
     return render(request, 'words/home.html')
+
+
+def upload_file(request):
+    if request.method == 'POST' and request.FILES.get('file', ''):
+        uploaded_file = request.FILES['file']
+        words_list = [[item.strip() for item in line.decode('utf-8').split(',')] for line in uploaded_file]
+        #pprint(words_list)
+        for item in words_list:
+            w = Word(english_word=item[0], transcription=item[1], translation=item[2])
+            w.save()
+        return render(request, 'words/upload_file.html')
+    return render(request, 'words/upload_file.html')
 
 
 def practice_words(request):
@@ -23,10 +38,12 @@ def practice_words(request):
     words = Word.objects.all()
 
     if request.method == "POST":
-        control_word, chosen_word = request.POST.get("translation").split()
+        print(request.POST.get("translation"))
+        control_word, chosen_word = request.POST.get("translation").split(',')
         word_obj = Word.objects.filter(translation=chosen_word)
         context['chosen_word'] = chosen_word
-        if str(word_obj[0]) == control_word:
+        print(chosen_word)
+        if word_obj and str(word_obj[0]) == control_word:
             context['status'] = True
             return render(request, 'words/practice_words.html', context)
         else:

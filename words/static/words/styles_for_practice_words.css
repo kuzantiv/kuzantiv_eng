@@ -87,3 +87,34 @@ a {
 a:hover {
     background-color: #5a6268;
 }
+
+
+#load_csv {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#load_csv:hover {
+    background-color: #5a6268;
+}
+
+#upload_csv {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#upload_csv:hover {
+    background-color: #5a6268;
+}

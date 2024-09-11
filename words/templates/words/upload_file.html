@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Word Practice</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'words/styles_for_practice_words.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload CSV File</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" id="load_csv" name="file" accept="file/csv" /><br>
+            <input type="submit" id="upload_csv" value="upload_file"><br>
+        </form>
+    </div>
+</body>
+</html>
